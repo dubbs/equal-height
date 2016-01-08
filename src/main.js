@@ -3,8 +3,7 @@
   'use strict';
 
   /**
-   *
-   * @param $items
+   * Equalizes height for a group of selected elements
    * @param options
    * @returns {{}}
    */
@@ -14,8 +13,8 @@
     var groups;
 
     /**
-     * [0]: jQuery.fn.init[...]
-     * [1]: jQuery.fn.init[...]
+     * Return multiple groups of elements by offset top
+     * @returns [0: jQuery.fn.init[...], 1: jQuery.fn.init[...]]
      */
     var groupByTop = function () {
       var obj = {};
@@ -33,14 +32,15 @@
     };
 
     /**
-     * [0]: jQuery.fn.init[...]
+     * Return a single group of all elements
+     * @returns [0: jQuery.fn.init[...]]
      */
     var groupByAll = function () {
       groups = [$items];
     };
 
     /**
-     *
+     * Find the max height for a group of elements
      * @param $groupItems
      * @returns {number}
      */
@@ -52,7 +52,7 @@
     };
 
     /**
-     *
+     * Reset elements to their default height
      * @param $groupItems
      */
     var resetHeightForItems = function ($groupItems) {
@@ -60,7 +60,7 @@
     };
 
     /**
-     *
+     * Set height for items in group
      * @param $groupItems
      */
     var setHeightForItems = function ($groupItems) {
@@ -69,7 +69,7 @@
     };
 
     /**
-     *
+     * Set height for items
      * @param index
      * @param $groupItems
      */
@@ -80,7 +80,7 @@
     };
 
     /**
-     *
+     * Group items, then set heights
      */
     var updateHeights = function () {
       if (options.groupByTop) {
@@ -92,26 +92,26 @@
     };
 
     /**
-     *
+     * Resize handler
      */
     var onResize = function () {
       updateHeights();
     };
 
     /**
-     *
+     * Event handlers
      */
     $(window).on('resize', _debounce(onResize, options.resizeTimeout));
     $(document).on('ready', updateHeights);
 
     /**
-     *
+     * Public interface
      */
     return {};
   }
 
   /**
-   *
+   * jQuery fn
    * @param options
    * @returns {*}
    */
@@ -121,7 +121,7 @@
   };
 
   /**
-   *
+   * jQuery fn defaults
    * @type {{groupByTop: boolean, resizeTimeout: number}}
    */
   $.fn.equalHeight.defaults = {
