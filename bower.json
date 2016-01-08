@@ -1,0 +1,27 @@
+{
+  "name": "equal-height",
+  "main": "src/main.js",
+  "version": "0.1.1",
+  "homepage": "https://github.com/dubbs/equal-height",
+  "authors": [
+    "Kevin Warrington <kevin.warrington@gmail.com>"
+  ],
+  "description": "Equalizes height for a group of selected elements",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "jquery",
+    "plugin",
+    "equal",
+    "height"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

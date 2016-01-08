@@ -1,0 +1,37 @@
+{
+  "name": "equal-height",
+  "version": "0.1.1",
+  "description": "Equalizes height for a group of selected elements",
+  "main": "src/main.js",
+  "scripts": {
+    "postinstall": "$(npm bin)/bower install",
+    "min-js": "$(npm bin)/uglifyjs --compress --mangle --output dist/main.min.js -- src/main.js",
+    "add-files": "git add dist",
+    "server": "python -m SimpleHTTPServer 8000"
+  },
+  "pre-commit": [
+    "min-js",
+    "add-files"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dubbs/equal-height"
+  },
+  "keywords": [
+    "jquery",
+    "plugin",
+    "equal",
+    "height"
+  ],
+  "author": "Kevin Warrington <kevin.warrington@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dubbs/equal-height/issues"
+  },
+  "homepage": "https://github.com/dubbs/equal-height",
+  "devDependencies": {
+    "bower": "^1.4.1",
+    "pre-commit": "^1.0.7",
+    "uglify-js": "^2.4.23"
+  }
+}
