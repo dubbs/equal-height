@@ -1,6 +1,6 @@
 {
   "name": "equal-height",
-  "version": "0.1",
+  "version": "0.1.0",
   "description": "Equalizes height for a group of selected elements",
   "main": "src/main.js",
   "scripts": {
