@@ -92,17 +92,36 @@
     };
 
     /**
-     * Resize handler
+     * Handler - Resize
      */
     var onResize = function () {
       updateHeights();
     };
 
     /**
+     * Handler - DOM Ready
+     */
+    var onDOMReady = function () {
+      if (options.updateOnDOMReady) {
+        updateHeights();
+      }
+    };
+
+    /**
+     * Handler - DOM Load
+     */
+    var onDOMLoad = function () {
+      if (options.updateOnDOMLoad) {
+        updateHeights();
+      }
+    };
+
+    /**
      * Event handlers
      */
     $(window).on('resize', _debounce(onResize, options.resizeTimeout));
-    $(document).on('ready', updateHeights);
+    $(window).on('load', onDOMLoad);
+    $(document).on('ready', onDOMReady);
 
     /**
      * Public interface
@@ -125,8 +144,10 @@
    * @type {{groupByTop: boolean, resizeTimeout: number}}
    */
   $.fn.equalHeight.defaults = {
-    groupByTop: false, // further groups elements using top position, this achieves row based equal heights
-    resizeTimeout: 100 // debounce onResize, wait 100ms
+    groupByTop: false, // group elements using top position, row based
+    resizeTimeout: 100, // debounce onResize 100ms
+    updateOnDOMReady: true, // update heights onDOMReady
+    updateOnDOMLoad: false // update heights onDOMLoad
   };
 
   // Underscore.JS - 1.8.3 - debounce
@@ -155,3 +176,4 @@
   };
 
 }(this, this.document, this.jQuery));
+
