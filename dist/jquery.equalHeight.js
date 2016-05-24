@@ -86,8 +86,8 @@ var clearHeight = function clearHeight(elements) {
   $(elements).css('height', 'auto');
 };
 
-var getHeight = function getHeight(x) {
-  return $(x).height();
+var getHeight = function getHeight(element) {
+  return $(element).height();
 };
 
 var applyMaxHeight = function applyMaxHeight(elements) {
@@ -108,11 +108,13 @@ var equalizeHeights = function equalizeHeights(elements, groupByTop) {
   groupsAsArray.forEach(applyMaxHeight);
 };
 
-$.fn.equalHeight = function (_ref) {
+$.fn.equalHeight = function () {
+  var _ref = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
+
   var _ref$groupByTop = _ref.groupByTop;
   var groupByTop = _ref$groupByTop === undefined ? false : _ref$groupByTop;
   var _ref$resizeTimeout = _ref.resizeTimeout;
-  var resizeTimeout = _ref$resizeTimeout === undefined ? 100 : _ref$resizeTimeout;
+  var resizeTimeout = _ref$resizeTimeout === undefined ? 20 : _ref$resizeTimeout;
   var _ref$updateOnDOMReady = _ref.updateOnDOMReady;
   var updateOnDOMReady = _ref$updateOnDOMReady === undefined ? true : _ref$updateOnDOMReady;
   var _ref$updateOnDOMLoad = _ref.updateOnDOMLoad;

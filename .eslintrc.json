@@ -39,6 +39,6 @@
     "object-curly-spacing": ["error", "always", { "objectsInObjects": false, "arraysInObjects": false }],
     "prefer-arrow-callback": ["error"],
     "arrow-spacing": ["error", { "before": true, "after": true }],
-    "no-magic-numbers": ["error", { "ignoreArrayIndexes": true, "ignore": [-1, 0, 1, 2, 10, 100] }]
+    "no-magic-numbers": ["error", { "ignoreArrayIndexes": true, "ignore": [-1, 1, 20] }]
   }
 }

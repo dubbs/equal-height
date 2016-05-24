@@ -1,33 +1,33 @@
 import debounce from 'debounce';
 
-const groupElementsByTop = function (groups, element) {
+const groupElementsByTop = (groups, element) => {
   const top = $(element).offset().top;
   groups[top] = groups[top] || [];
   groups[top].push(element);
   return groups;
 };
 
-const groupElementsByZero = function (groups, element) {
+const groupElementsByZero = (groups, element) => {
   groups[0] = groups[0] || [];
   groups[0].push(element);
   return groups;
 };
 
-const clearHeight = function (elements) {
+const clearHeight = (elements) => {
   $(elements).css('height', 'auto');
 };
 
-const getHeight = (x) => {
-  return $(x).height();
+const getHeight = (element) => {
+  return $(element).height();
 };
 
-const applyMaxHeight =  function (elements) {
+const applyMaxHeight = (elements) => {
   const heights = elements.map(getHeight);
   const maxHeight = Math.max.apply(null, heights);
   $(elements).height(maxHeight);
 };
 
-const equalizeHeights = function (elements, groupByTop) {
+const equalizeHeights = (elements, groupByTop) => {
   // Sort into groups.
   const groups = groupByTop ?
     elements.reduce(groupElementsByTop, {}) :
@@ -41,7 +41,7 @@ const equalizeHeights = function (elements, groupByTop) {
   groupsAsArray.forEach(applyMaxHeight);
 };
 
-$.fn.equalHeight = function ({ groupByTop = false, resizeTimeout = 100, updateOnDOMReady = true, updateOnDOMLoad = false }) {
+$.fn.equalHeight = function ({ groupByTop = false, resizeTimeout = 20, updateOnDOMReady = true, updateOnDOMLoad = false } = {}) {
   // Convert to native array.
   const elements = this.toArray();
   // Handle resize event.
