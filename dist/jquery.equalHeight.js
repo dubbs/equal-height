@@ -83,7 +83,7 @@ var groupElementsByZero = function groupElementsByZero(groups, element) {
 };
 
 var clearHeight = function clearHeight(elements) {
-  $(elements).css('height', 'auto');
+  return $(elements).css('height', 'auto');
 };
 
 var getHeight = function getHeight(element) {
@@ -138,6 +138,7 @@ $.fn.equalHeight = function () {
       equalizeHeights(elements, groupByTop);
     }
   });
+  return this;
 };
 
 },{"debounce":2}]},{},[3]);
