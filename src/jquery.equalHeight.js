@@ -13,13 +13,9 @@ const groupElementsByZero = (groups, element) => {
   return groups;
 };
 
-const clearHeight = (elements) => {
-  $(elements).css('height', 'auto');
-};
+const clearHeight = elements => $(elements).css('height', 'auto');
 
-const getHeight = (element) => {
-  return $(element).height();
-};
+const getHeight = element => $(element).height();
 
 const applyMaxHeight = (elements) => {
   const heights = elements.map(getHeight);
@@ -41,7 +37,12 @@ const equalizeHeights = (elements, groupByTop) => {
   groupsAsArray.forEach(applyMaxHeight);
 };
 
-$.fn.equalHeight = function ({ groupByTop = false, resizeTimeout = 20, updateOnDOMReady = true, updateOnDOMLoad = false } = {}) {
+$.fn.equalHeight = function ({
+    groupByTop = false,
+    resizeTimeout = 20,
+    updateOnDOMReady = true,
+    updateOnDOMLoad = false
+  } = {}) {
   // Convert to native array.
   const elements = this.toArray();
   // Handle resize event.
@@ -60,4 +61,5 @@ $.fn.equalHeight = function ({ groupByTop = false, resizeTimeout = 20, updateOnD
       equalizeHeights(elements, groupByTop);
     }
   });
+  return this;
 };
