@@ -18,7 +18,7 @@ Each option is listed below, with its default value.
 ```js
 $('.selector').equalHeight({
   // groupByTop: false,
-  // resizeTimeout: 100,
+  // resizeTimeout: 20,
   // updateOnDOMReady: true,
   // updateOnDOMLoad: false
 })
@@ -50,11 +50,11 @@ Group and set a maximum height onDOMLoad.
 
 ```js
 $('.selector').equalHeight({
-  updateOnDOMLoad: false
+  updateOnDOMLoad: true
 })
 ```
 
-### { resizeTimeout: 100 }
+### { resizeTimeout: 20 }
 
 Set the duration in milliseconds for debouncing the window resize event. 
 
