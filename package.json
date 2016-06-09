@@ -26,7 +26,7 @@
   },
   "dependencies": {
     "debounce": "^1.0.0",
-    "jquery": "^2.2.4"
+    "jquery": "^3.0.0"
   },
   "devDependencies": {
     "babel-cli": "^6.9.0",
