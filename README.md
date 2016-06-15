@@ -8,7 +8,7 @@ Include the dependencies before you get started.
 
 ```html
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-<script src="dist/jquery.equalHeight.min.js"></script>
+<script src="node_modules/equal-height/dist/jquery.equalHeight.min.js"></script>
 ```
 
 ## Options
