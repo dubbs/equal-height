@@ -1,4 +1,7 @@
-# Equal Height [![Build Status](https://travis-ci.org/dubbs/equal-height.svg?branch=master)](https://travis-ci.org/dubbs/equal-height)
+# Equal Height
+
+[![Build Status](https://travis-ci.org/dubbs/equal-height.svg?branch=master)](https://travis-ci.org/dubbs/equal-height)
+[![npm version](https://badge.fury.io/js/equal-height.svg)](https://badge.fury.io/js/equal-height)
 
 Equal Height is a jQuery plugin used to set and maintain a maximum height for a set of DOM elements.
 
