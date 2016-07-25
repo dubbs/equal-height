@@ -1,6 +1,6 @@
 {
   "name": "equal-height",
-  "main": "src/main.js",
+  "main": "src/jquery.equalHeight.js",
   "version": "1.0.2",
   "homepage": "https://github.com/dubbs/equal-height",
   "authors": [
