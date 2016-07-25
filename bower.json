@@ -1,7 +1,7 @@
 {
   "name": "equal-height",
   "main": "src/jquery.equalHeight.js",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "homepage": "https://github.com/dubbs/equal-height",
   "authors": [
     "Kevin Warrington <kevin.warrington@gmail.com>"
