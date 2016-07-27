@@ -1,4 +1,5 @@
 import debounce from 'debounce';
+import $ from 'jquery';
 
 const groupElementsByTop = (groups, element) => {
   const top = $(element).offset().top;

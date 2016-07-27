@@ -61,16 +61,21 @@ module.exports = function debounce(func, wait, immediate){
 };
 
 },{"date-now":1}],3:[function(require,module,exports){
+(function (global){
 'use strict';
 
 var _debounce = require('debounce');
 
 var _debounce2 = _interopRequireDefault(_debounce);
 
+var _jquery = (typeof window !== "undefined" ? window['jQuery'] : typeof global !== "undefined" ? global['jQuery'] : null);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var groupElementsByTop = function groupElementsByTop(groups, element) {
-  var top = $(element).offset().top;
+  var top = (0, _jquery2.default)(element).offset().top;
   groups[top] = groups[top] || [];
   groups[top].push(element);
   return groups;
@@ -83,17 +88,17 @@ var groupElementsByZero = function groupElementsByZero(groups, element) {
 };
 
 var clearHeight = function clearHeight(elements) {
-  return $(elements).css('height', 'auto');
+  return (0, _jquery2.default)(elements).css('height', 'auto');
 };
 
 var getHeight = function getHeight(element) {
-  return $(element).height();
+  return (0, _jquery2.default)(element).height();
 };
 
 var applyMaxHeight = function applyMaxHeight(elements) {
   var heights = elements.map(getHeight);
   var maxHeight = Math.max.apply(null, heights);
-  $(elements).height(maxHeight);
+  (0, _jquery2.default)(elements).height(maxHeight);
 };
 
 var equalizeHeights = function equalizeHeights(elements, groupByTop) {
@@ -108,7 +113,7 @@ var equalizeHeights = function equalizeHeights(elements, groupByTop) {
   groupsAsArray.forEach(applyMaxHeight);
 };
 
-$.fn.equalHeight = function () {
+_jquery2.default.fn.equalHeight = function () {
   var _ref = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
 
   var _ref$groupByTop = _ref.groupByTop;
@@ -123,17 +128,17 @@ $.fn.equalHeight = function () {
   // Convert to native array.
   var elements = this.toArray();
   // Handle resize event.
-  $(window).on('resize', (0, _debounce2.default)(function () {
+  (0, _jquery2.default)(window).on('resize', (0, _debounce2.default)(function () {
     equalizeHeights(elements, groupByTop);
   }, resizeTimeout));
   // Handle load event.
-  $(window).on('load', function () {
+  (0, _jquery2.default)(window).on('load', function () {
     if (updateOnDOMLoad) {
       equalizeHeights(elements, groupByTop);
     }
   });
   // Handle ready event.
-  $(document).on('ready', function () {
+  (0, _jquery2.default)(document).on('ready', function () {
     if (updateOnDOMReady) {
       equalizeHeights(elements, groupByTop);
     }
@@ -141,4 +146,5 @@ $.fn.equalHeight = function () {
   return this;
 };
 
+}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{"debounce":2}]},{},[3]);
