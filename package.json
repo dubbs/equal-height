@@ -19,10 +19,10 @@
   },
   "homepage": "https://github.com/dubbs/equal-height",
   "scripts": {
-    "build": "npm run build-js && npm run build-min-js",
-    "build-js": "browserify src/jquery.equalHeight.js -o dist/jquery.equalHeight.js -t [ babelify --presets [ es2015 ] ] -t browserify-shim",
-    "build-min-js": "uglifyjs --compress --mangle --output dist/jquery.equalHeight.min.js -- dist/jquery.equalHeight.js",
-    "watch-js": "nodemon -e js -w src -x 'npm run build'"
+    "build": "npm run build:js && npm run build:jsmin",
+    "build:js": "browserify src/jquery.equalHeight.js -o dist/jquery.equalHeight.js -t [ babelify --presets [ es2015 ] ] -t browserify-shim",
+    "build:jsmin": "uglifyjs --compress --mangle --output dist/jquery.equalHeight.min.js -- dist/jquery.equalHeight.js",
+    "watch:build": "nodemon -e js -w src -x 'npm run build'"
   },
   "dependencies": {
     "debounce": ">=1.0.0",
