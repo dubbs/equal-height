@@ -1,4 +1,4 @@
-# Equal Height
+# DEPRECATED
 
 [![Build Status](https://travis-ci.org/dubbs/equal-height.svg?branch=master)](https://travis-ci.org/dubbs/equal-height)
 [![npm version](https://badge.fury.io/js/equal-height.svg)](https://badge.fury.io/js/equal-height)
